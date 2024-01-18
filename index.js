@@ -199,7 +199,7 @@ discordClient.on('messageCreate', async (msg) => {
                 let val = guildMap.get(mapKey);
                 if (val.voice_Connection) val.voice_Connection.destroy()
                 guildMap.delete(mapKey)
-                msg.reply("Disconnected.")
+                msg.reply("みんな、さらばだ！")
             } else {
                 msg.reply("Cannot leave because not connected.")
             }
@@ -287,7 +287,7 @@ async function connect(msg, mapKey) {
             if (e) console.log(e);
             guildMap.delete(mapKey);
         })
-        msg.reply('connected!')
+        msg.reply('TalkStorage参上！')
     } catch (e) {
         console.log('connect: ' + e)
         msg.reply('Error: unable to join your voice channel.');
