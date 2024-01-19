@@ -342,7 +342,7 @@ function speak_impl(receiver, mapKey) {
             console.log("duration: " + duration)
 
             if (SPEECH_METHOD === 'witai' || SPEECH_METHOD === 'google') {
-                if (duration < 1.0 || duration > 20) {
+                if (duration < 1.0 || duration > 6000) {
                     return;
                 }
             }
@@ -451,8 +451,6 @@ async function transcribe_gspeech(buffer) {
             useEnhanced: true,
             model: 'latest_long',
         };
-        console.log('transcribe_gspeech-setup', request)
-
 
         const [response] = await gspeechclient.recognize(request);
 
